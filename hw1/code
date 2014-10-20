@@ -1,0 +1,72 @@
+//  magic square generating code
+//  main.c
+//  emedprogram
+//
+//  Created by Zihui Wang on 10/9/14.
+//  Copyright (c) 2014 UCSC-ext. All rights reserved.
+//
+
+
+#include<stdio.h>
+
+//Siamese method to creat magic square//
+
+int main()
+{
+    
+    int num;
+    while (1)
+    {
+        printf("please input magic sqaure dimention (odd number only and must greater than 1");
+        scanf("%d",&num);
+        if(num>1 && num%2==1)
+        {
+            break;
+        }
+        else
+        {
+            printf("the number must be odd and greater than 1\n");
+        }
+        
+    }
+    
+    int matrix[num][num];
+    
+    
+    int row = 0,col = 0;
+    row = 0;
+    col = (num-1)/2;
+    int i = 1;
+    int value =0;
+    
+    while( i <= num*num)
+    {
+        if(col<0)
+        {
+            col = col+num;
+        }
+        col = col%num;
+        if(row<0)
+        {
+            row = row+num;
+        }
+        row = row%num;
+        
+        matrix[row][col] = value;
+        value = value + 1;
+        col = col+1;
+        row = row+1;
+    }
+    
+    int h = 0,k =0;
+    for(h=0; h<num; h++)
+    {
+        for(k=0; k<num; k++ )
+        {
+            printf("%d", matrix[k][h]);
+        }
+        printf("/n");
+    }
+    
+    return 0;
+}
