@@ -1,0 +1,18 @@
+Only one large componet inside:
+
+Nordic NRF 1822 SoC,
+ARM Cortex-M0 32 bit processor
+256 kB embedded flash
+16 kB RAM (SRAM)
+Bluetooth 4.0 low energy
+8/9/10 bit ADC
+SPI/I2C/UART
+Two freqeuncy avaible: 32MHz/37kHz
+
+
+Other componets:
+Two osillator
+One button
+One LED
+Two buzzer
+Couples of resistors/capcitors/indcutors
