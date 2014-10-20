@@ -1,0 +1,31 @@
+1. Login to mbed web site, export the "Hello World" program to all of the following targets. 
+   How many text files and how many lines of text code in the exported offline code package?  
+   uVision: 53 .h files + 1 .cpp file       9694 lines from .h files + 12 lines from .cpp file
+   GCC ARM: 53 .h files + 1 .cpp file       9694 lines from .h files + 12 lines from .cpp file
+   
+   How many binary (library or object) files?
+   uVision: 5 .o files + 2 .ar files
+   GCC ARM: 4 .o fiels + 2 .a fiels
+   
+   How many files are different between (a) and (b)? (Use linux commands: find, wc, diff) (10 points)
+   Only in HelloWorld_uvision/: HelloWorld.uvopt
+   Only in HelloWorld_uvision/: HelloWorld.uvproj
+   Only in HelloWorld_gcc: Makefile
+   Only in HelloWorld_gcc/mbed/LPC1768/GCC_ARM: LPC1768.ld
+   Only in HelloWorld_uvision/mbed/LPC1768/ARM: LPC1768.sct
+   Only in HelloWorld_uvision/mbed/LPC1768/ARM: capi.ar
+   Binary files HelloWorld_uvision/mbed/LPC1768/ARM/cmsis_nvic.o and HelloWorld_gcc/mbed/LPC1768/GCC_ARM/cmsis_nvic.o differ
+   Binary files HelloWorld_uvision/mbed/LPC1768/ARM/core_cm3.o and HelloWorld_gcc/mbed/LPC1768/GCC_ARM/core_cm3.o differ
+   Only in HelloWorld_gcc/mbed/LPC1768/GCC_ARM: libcapi.a
+   Only in HelloWorld_gcc/mbed/LPC1768/GCC_ARM: libmbed.a
+   Only in HelloWorld_uvision/mbed/LPC1768/ARM: mbed.ar
+   Binary files HelloWorld_uvision/mbed/LPC1768/ARM/startup_LPC17xx.o and HelloWorld_gcc/mbed/LPC1768/GCC_ARM/startup_LPC17xx.o differ
+   Only in HelloWorld_uvision/mbed/LPC1768/ARM: sys.o
+   Binary files HelloWorld_uvision/mbed/LPC1768/ARM/system_LPC17xx.o and HelloWorld_gcc/mbed/LPC1768/GCC_ARM/system_LPC17xx.o differ
+   
+   What is the "Entry point address:" of your program?  (hint: using readelf)
+   
+   a.	Exporting to uVision 
+   b.	Exporting to GCC ARM Embedded 
+
+   Note: Right Click your program, then select "export ..."
