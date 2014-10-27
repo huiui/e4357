@@ -1,0 +1,43 @@
+// modified program 14.1 to make the first LED light flash
+
+ void delay(void);
+
+//Define addresses of digital i/o control registers, as pointers to volatile data
+
+#define FIO1DIR2   (*(volatile unsigned char *) (0x2009c022))
+#define FIO1PIN2   (*(volatile unsigned char *) (0x2009c036))
+
+int main() {
+
+  FIO1DIR2=0xFF;  // set port 2, lowest byte to output
+  int i;
+  i=0;
+   while(i<20) {
+
+    FIO1PIN2 |= 0x04;  // OR bit 0 with 1 to set pin high
+
+    delay();
+
+    FIO1PIN2 &= ~0x04; // AND bit 0 with 0 to set pin low
+
+    delay();
+     i = i+1;
+   }
+
+  }
+
+//delay function
+
+  void delay(void){
+
+   int j;           //loop variable j
+
+   for (j=0;j<1000000;j++) {
+
+    j++;
+
+    j--;           //waste time
+
+   }
+
+  }
